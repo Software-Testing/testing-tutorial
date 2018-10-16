@@ -58,6 +58,7 @@ public class BoundedStackTest {
     public void shouldNotRetrieveAnythingFromAnEmptyStack() throws StackUnderflowException {
         BoundedStack<String> stack = new BoundedStack<>(String.class);
         stack.pop();
+        fail();
     }
 
     @Test(timeout = 100)
