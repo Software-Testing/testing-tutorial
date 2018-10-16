@@ -1,10 +1,11 @@
 package m2.vv.tutorial.collections;
 
 import m2.vv.tutorial.collections.exceptions.StackUnderflowException;
+import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 
-public class HasPeekMatcher<T> implements Matcher<BoundedStack<T>> {
+public class HasPeekMatcher<T> extends BaseMatcher<BoundedStack<T>> {
 
 
     private final T expectedPeek;
@@ -45,12 +46,5 @@ public class HasPeekMatcher<T> implements Matcher<BoundedStack<T>> {
     @Override
     public void describeTo(Description description) {
         description.appendValue(expectedPeek).appendText(" on top of the stack ");
-
-    }
-
-    @Override
-    @Deprecated
-    public void _dont_implement_Matcher___instead_extend_BaseMatcher_() {
-
     }
 }
